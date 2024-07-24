@@ -2,9 +2,6 @@ name: Deploy Workflows using Databricks Assets Bundle (DAB) to Dev environment
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
   pull_request:
     types:
       - opened
