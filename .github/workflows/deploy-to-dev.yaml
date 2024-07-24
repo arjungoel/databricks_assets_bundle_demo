@@ -42,7 +42,7 @@ jobs:
         env:
           DATABRICKS_HOST: ${{ vars.DATABRICKS_HOST }}
           DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
-          JOB_NAME: 'dab_demo_job'
+          JOB_NAME: '[dev arjgl1995arjun] dab_demo_job'
           WAIT_TIMEOUT: '20m0s'
         run: |
           JOB_ID=$(databricks jobs list | grep -w $JOB_NAME | awk -F ' ' '{print $1}')
