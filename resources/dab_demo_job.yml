@@ -8,17 +8,17 @@ resources:
           - arjungoel1995@gmail.com
 
       tasks:
-        - task_key: DS_Task
-          job_cluster_key: job_cluster
-          notebook_task:
-            notebook_path: ../src/first_task.ipynb
-        
         - task_key: Python_Task
           job_cluster_key: job_cluster
+          spark_python_task:
+            python_file: ../src/sum.py
+
+        - task_key: DS_Task
+          job_cluster_key: job_cluster
           depends_on:
-            - task_key: DS_Task
+            - task_key: Python_Task
           notebook_task:
-            notebook_path: ../src/second_task.ipynb
+            notebook_path: ../src/first_task.ipynb
 
       job_clusters:
         - job_cluster_key: job_cluster
