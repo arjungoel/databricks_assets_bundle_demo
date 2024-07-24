@@ -34,7 +34,8 @@ jobs:
       - name: Validate DAB data resources
         run: databricks bundle validate
 
-      - run: databricks bundle deploy to dev environment
+      - name: databricks bundle deploy to dev environment
         env:
           DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
           DATABRICKS_BUNDLE_ENV: dev
+        run: databricks bundle deploy
