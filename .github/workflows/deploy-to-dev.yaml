@@ -43,8 +43,6 @@ jobs:
           DATABRICKS_HOST: ${{ vars.DATABRICKS_HOST }}
           DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
           JOB_NAME: 'dab_demo_job'
-        #  WAIT_TIMEOUT: '20m0s'
         run: |
           JOB_ID=$(databricks jobs list | grep -w $JOB_NAME | awk -F ' ' '{print $1}')
-          databricks jobs run-now $JOB_ID 
-        #--timeout $WAIT_TIMEOUT
+          databricks jobs run-now $JOB_ID
