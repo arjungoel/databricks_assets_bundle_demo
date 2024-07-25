@@ -9,19 +9,19 @@ resources:
 
       tasks:
         - task_key: Sum_Task
-          job_cluster_key: ${var.job_cluster_key}
+          job_cluster_key: ${vars.job_cluster_key}
           spark_python_task:
             python_file: ../src/sum.py
 
         - task_key: Hello_Task
-          job_cluster_key: ${var.job_cluster_key}
+          job_cluster_key: ${vars.job_cluster_key}
           depends_on:
             - task_key: Sum_Task
           spark_python_task:
             python_file: ../src/hello.py
 
       job_clusters:
-        - job_cluster_key: ${var.job_cluster_key}
+        - job_cluster_key: ${vars.job_cluster_key}
           new_cluster:
             spark_version: 13.3.x-scala2.12
             node_type_id: n1-standard-4
