@@ -1,0 +1,4 @@
+variables:
+  job_cluster_key:
+    description: Databricks job cluster
+    default: job_cluster
