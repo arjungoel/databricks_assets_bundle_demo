@@ -18,7 +18,7 @@ resources:
       schedule:
         quartz_cron_expression: "0 0/5 * * * ?"
         timezone_id: "Asia/Kolkata"
-        pause_status: "UNPAUSED"
+        pause_status: "PAUSED"
 
       email_notifications:
         on_start:
