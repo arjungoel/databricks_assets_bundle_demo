@@ -15,8 +15,16 @@ resources:
   jobs:
     dab_demo_job:
       name: dab_demo_job
+      schedule:
+        quartz_cron_expression: "0 0/5 * * * ?"
+        timezone_id: "Asia/Kolkata"
+      #  pause_status: "PAUSED"
 
       email_notifications:
+        on_start:
+          - arjungoel1995@gmail.com
+        on_success:
+          - arjungoel1995@gmail.com
         on_failure:
           - arjungoel1995@gmail.com
 
